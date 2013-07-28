@@ -1,253 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <wallpapers>
 
-    <category name="AOKP" >
+    <category name="PAC" >
 
         <wallpaper
-            author="ThaPHLASH"
-            url="http://aokp.co/wallpapers/thaplash_logo_head_office.jpg" />
+            author="UNKNOWN"
+            url="http://pac-rom.com/wallpapers/pacman1.png" />
 
         <wallpaper
-            author="ThaPHLASH"
-            url="http://aokp.co/wallpapers/thaplash_logo_head_office2.jpg" />
+            author="UNKNOWN"
+            url="http://pac-rom.com/wallpapers/pacman2.png" />
 
         <wallpaper
-            author="eatmode4life"
-            url="http://aokp.co/wallpapers/eatmode4life_skycore.jpg" />
+            author="UNKNOWN"
+            url="http://pac-rom.com/wallpapers/pacman3.png" />
 
         <wallpaper
-            author="JaiThemes"
-            url="http://aokp.co/wallpapers/jaithemes_striped_blue.jpg" />
+            author="UNKNOWN"
+            url="http://pac-rom.com/wallpapers/pacman4.png" />
 
         <wallpaper
-            author="JaiThemes"
-            url="http://aokp.co/wallpapers/jaithemes_striped.jpg" />
+            author="UNKNOWN"
+            url="http://pac-rom.com/wallpapers/pacman5.png" />
 
         <wallpaper
-            author="JaiThemes"
-            url="http://aokp.co/wallpapers/jaithemes_village_gradient.jpg" />
+            author="UNKNOWN"
+            url="http://pac-rom.com/wallpapers/pacman6.png" />
 
         <wallpaper
-            author="Just_Reboot"
-            url="http://aokp.co/wallpapers/just_reboot_abstract.png" />
+            author="UNKNOWN"
+            url="http://pac-rom.com/wallpapers/pacman7.png" />
 
         <wallpaper
-            author="Just_Reboot"
-            url="http://aokp.co/wallpapers/just_reboot_abstract2.png" />
+            author="UNKNOWN"
+            url="http://pac-rom.com/wallpapers/pacman8.png" />
 
         <wallpaper
-            author="Just_Reboot"
-            url="http://aokp.co/wallpapers/just_reboot_aokp_samurai.png" />
+            author="UNKNOWN"
+            url="http://pac-rom.com/wallpapers/pacman9.png" />
 
         <wallpaper
-            author="Just_Reboot"
-            url="http://aokp.co/wallpapers/just_reboot_wall_10.png" />
+            author="UNKNOWN"
+            url="http://pac-rom.com/wallpapers/pacman10.png" />
 
         <wallpaper
-            author="KnokFirst"
-            url="http://aokp.co/wallpapers/knokfirst_phlashlogo_crazy.jpg" />
+            author="UNKNOWN"
+            url="http://pac-rom.com/wallpapers/pacman11.png" />
 
         <wallpaper
-            author="KnokFirst"
-            url="http://aokp.co/wallpapers/knokfirst_phlashlogo_light.jpg" />
+            author="UNKNOWN"
+            url="http://pac-rom.com/wallpapers/pacman12.png" />
 
         <wallpaper
-            author="Just_Reboot"
-            url="http://aokp.co/wallpapers/knokfirst_phlashlogo.jpg" />
+            author="UNKNOWN"
+            url="http://pac-rom.com/wallpapers/pacman13.png" />
 
         <wallpaper
-            author="kwes1020"
-            url="http://aokp.co/wallpapers/kwes1020_aokpwp1.png" />
+            author="UNKNOWN"
+            url="http://pac-rom.com/wallpapers/pacman14.png" />
 
         <wallpaper
-            author="kwes1020"
-            url="http://aokp.co/wallpapers/kwes1020_aokpwp2.png" />
+            author="UNKNOWN"
+            url="http://pac-rom.com/wallpapers/pacman15.jpg" />
 
-        <wallpaper
-            author="gleezbo"
-            url="http://aokp.co/wallpapers/gleezbo_orb.png" />
+		<wallpaper
+            author="UNKNOWN"
+            url="http://pac-rom.com/wallpapers/pacman16.jpg" />
 
-        <wallpaper
-            author="gleezbo"
-            url="http://aokp.co/wallpapers/gleezbo_space.png" />
+		<wallpaper
+            author="UNKNOWN"
+            url="http://pac-rom.com/wallpapers/pacman17.jpg" />
 
-        <wallpaper
-            author="gleezbo"
-            url="http://aokp.co/wallpapers/gleezbo_space_android.png" />
-
-        <wallpaper
-            author="gleezbo"
-            url="http://aokp.co/wallpapers/gleezbo_wallpaper_white2.png" />
-
-        <wallpaper
-            author="gleezbo"
-            url="http://aokp.co/wallpapers/gleezbo_weirddeded.png" />
-
-        <wallpaper
-            author="dnnysaenz"
-            url="http://aokp.co/wallpapers/dnnysaenz_bw_black.png" />
-
-        <wallpaper
-            author="dnnysaenz"
-            url="http://aokp.co/wallpapers/dnnysaenz_bw_white.png" />
-
-        <wallpaper
-            author="dnnysaenz"
-            url="http://aokp.co/wallpapers/dnnysaenz_dark_blue_black.png" />
-
-        <wallpaper
-            author="dnnysaenz"
-            url="http://aokp.co/wallpapers/dnnysaenz_dark_blue_white.png" />
-
-        <wallpaper
-            author="dnnysaenz"
-            url="http://aokp.co/wallpapers/dnnysaenz_dark_green_black.png" />
-
-        <wallpaper
-            author="dnnysaenz"
-            url="http://aokp.co/wallpapers/dnnysaenz_dark_green_white.png" />
-
-        <wallpaper
-            author="dnnysaenz"
-            url="http://aokp.co/wallpapers/dnnysaenz_dark_pink_black.png" />
-
-        <wallpaper
-            author="dnnysaenz"
-            url="http://aokp.co/wallpapers/dnnysaenz_dark_pink_white.png" />
-
-        <wallpaper
-            author="dnnysaenz"
-            url="http://aokp.co/wallpapers/dnnysaenz_frost_black.png" />
-
-        <wallpaper
-            author="dnnysaenz"
-            url="http://aokp.co/wallpapers/dnnysaenz_frost_white.png" />
-
-        <wallpaper
-            author="dnnysaenz"
-            url="http://aokp.co/wallpapers/dnnysaenz_green_black.png" />
-
-        <wallpaper
-            author="dnnysaenz"
-            url="http://aokp.co/wallpapers/dnnysaenz_green_white.png" />
-
-        <wallpaper
-            author="dnnysaenz"
-            url="http://aokp.co/wallpapers/dnnysaenz_light_blue_black.png" />
-
-        <wallpaper
-            author="dnnysaenz"
-            url="http://aokp.co/wallpapers/dnnysaenz_light_blue_white.png" />
-
-        <wallpaper
-            author="dnnysaenz"
-            url="http://aokp.co/wallpapers/dnnysaenz_light_pink_black.png" />
-
-        <wallpaper
-            author="dnnysaenz"
-            url="http://aokp.co/wallpapers/dnnysaenz_light_pink_white.png" />
-
-        <wallpaper
-            author="dnnysaenz"
-            url="http://aokp.co/wallpapers/dnnysaenz_orange_black.png" />
-
-        <wallpaper
-            author="dnnysaenz"
-            url="http://aokp.co/wallpapers/dnnysaenz_orange_white.png" />
-
-        <wallpaper
-            author="dnnysaenz"
-            url="http://aokp.co/wallpapers/dnnysaenz_purple_black.png" />
-
-        <wallpaper
-            author="dnnysaenz"
-            url="http://aokp.co/wallpapers/dnnysaenz_purple_white.png" />
-
-        <wallpaper
-            author="dnnysaenz"
-            url="http://aokp.co/wallpapers/dnnysaenz_red_black.png" />
-
-        <wallpaper
-            author="dnnysaenz"
-            url="http://aokp.co/wallpapers/dnnysaenz_red_white.png" />
-
-        <wallpaper
-            author="dnnysaenz"
-            url="http://aokp.co/wallpapers/dnnysaenz_yellow_black.png" />
-
-        <wallpaper
-            author="dnnysaenz"
-            url="http://aokp.co/wallpapers/dnnysaenz_yellow_white.png" />
-
-        <wallpaper
-            author="daxxmax"
-            url="http://aokp.co/wallpapers/daxxmax_aokp_galaxy.jpg" />
-    </category>
-
-    <category name="Newest" >
-
-        <wallpaper
-            author="KhasMek"
-            url="http://aokp.co/wallpapers/khasmek_kcka.png" />
-
-        <wallpaper
-            author="KhasMek"
-            url="http://aokp.co/wallpapers/khasmek_kcka_dark.png" />
-
-        <wallpaper
-            author="c_hale22"
-            url="http://aokp.co/wallpapers/chale_unircorn1.png" />
-    </category>
-
-    <category name="Older Wallpapers" >
-
-        <wallpaper
-            author="Bluewall"
-            url="http://aokp.co/wallpapers/bluewall_white_unicorn_and_blue.jpg" />
-
-        <wallpaper
-            author="Bluewall"
-            url="http://aokp.co/wallpapers/bluewall_white_unicorn_and_green.jpg" />
-
-        <wallpaper
-            author="Bluewall"
-            url="http://aokp.co/wallpapers/bluewall_white_unicorn_and_orange.jpg" />
-
-        <wallpaper
-            author="JaiThemes"
-            url="http://aokp.co/wallpapers/jaithemes_setyourunicornfree.jpg" />
-
-        <wallpaper
-            author="Mobile_Sensei"
-            url="http://aokp.co/wallpapers/mobile_sensei_x1.jpg" />
-
-        <wallpaper
-            author="Mobile_Sensei"
-            url="http://aokp.co/wallpapers/mobile_sensei_x2.jpg" />
-
-        <wallpaper
-            author="Mobile_Sensei"
-            url="http://aokp.co/wallpapers/mobile_sensei_x3.jpg" />
-
-        <wallpaper
-            author="Mobile_Sensei"
-            url="http://aokp.co/wallpapers/mobile_sensei_x4.jpg" />
-
-        <wallpaper
-            author="Mobile_Sensei"
-            url="http://aokp.co/wallpapers/mobile_sensei_x5.jpg" />
-
-        <wallpaper
-            author="Mobile_Sensei"
-            url="http://aokp.co/wallpapers/mobile_sensei_x6.jpg" />
-
-        <wallpaper
-            author="Mobile_Sensei"
-            url="http://aokp.co/wallpapers/mobile_sensi_star.jpg" />
-
-        <wallpaper
-            author="SamsungClay"
-            url="http://aokp.co/wallpapers/samsungclay02.jpg" />
+		<wallpaper
+            author="UNKNOWN"
+            url="http://pac-rom.com/wallpapers/pacman18.jpg" />
     </category>
 
 </wallpapers>
