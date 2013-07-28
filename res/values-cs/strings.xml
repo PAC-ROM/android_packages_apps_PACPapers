@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name">Tapety AOKP</string>
-  <string name="title_activity_wallpaper">Swag pety</string>
+  <string name="app_name">Pac-Man Papers</string>
+  <string name="title_activity_wallpaper">Pac Papers</string>
   <string name="back">Předchozí</string>
   <string name="next">Další</string>
   <string name="page">Stránka: </string>

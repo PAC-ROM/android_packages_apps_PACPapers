@@ -1,7 +1,7 @@
 <resources>
 
-    <string name="app_name">AOKP Wallpapers</string>
-    <string name="title_activity_wallpaper">Swag Papers</string>
+    <string name="app_name">PAC-man Papers</string>
+    <string name="title_activity_wallpaper">Pac Papers</string>
     <string name="back">Previous</string>
     <string name="next">Next</string>
     <string name="page">Page: </string>

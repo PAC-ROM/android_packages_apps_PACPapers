@@ -1,5 +1,5 @@
 
-package com.aokp.swagpapers;
+package com.pac.pacpapers;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -37,7 +37,7 @@ import java.util.ArrayList;
 
 public class WallpaperActivity extends Activity {
 
-    public final String TAG = "SwagPapers";
+    public final String TAG = "PacPapers";
     protected static final String MANIFEST = "wallpaper_manifest.xml";
     protected static final int THUMBS_TO_SHOW = 4;
 

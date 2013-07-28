@@ -1,5 +1,5 @@
 
-package com.aokp.swagpapers;
+package com.pac.pacpapers;
 
 public class Wallpaper {
 
