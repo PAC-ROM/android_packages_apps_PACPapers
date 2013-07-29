@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <wallpapers>
 
-    <category name="PAC" >
+    <!--
+         Categories accept:
+        id="<string>" unique id string
+        name="<string>" visual name
+        
+        Wallpapers accept:
+        url="<url of wallpaper>"
+        thumbUrl="<url of thumbnail>"
+        author="<author>" may be used for filtering later
+        date="<date added>" may be used for filtering later
+        name="<wallpaper name">
+    -->
+
+    <category name="PAC Wallpapers" >
 
         <wallpaper
             author="UNKNOWN"
@@ -75,5 +88,86 @@
             author="UNKNOWN"
             url="http://pac-rom.com/wallpapers/pacman18.jpg" />
     </category>
+	
+	<category name="CM Wallpapers" >
+
+		<wallpaper
+            author="Asher Simonds"
+            url="http://pac-rom.com/wallpapers/wallpaper_ashersimonds_cmpatternholodark.png" />
+
+		<wallpaper
+            author="Asher Simonds"
+            url="http://pac-rom.com/wallpapers/wallpaper_ashersimonds_cmpatternhololight.png" />
+
+		<wallpaper
+            author="Cid3D"
+            url="http://pac-rom.com/wallpapers/wallpaper_manup456_cid3d.jpg" />
+
+		<wallpaper
+            author="Prash"
+            url="http://pac-rom.com/wallpapers/wallpaper_prash_ohaimark.png" />
+
+		<wallpaper
+            author="Tyler Hodge"
+            url="http://pac-rom.com/wallpapers/wallpaper_tylerhodge_blueperfection.jpg" />
+		</category>
+
+		<category name="AOKP Wallpapers" >
+
+        <wallpaper
+            author="ThaPHLASH"
+            url="http://aokp.co/wallpapers/thaplash_logo_head_office.jpg" />
+
+        <wallpaper
+            author="ThaPHLASH"
+            url="http://aokp.co/wallpapers/thaplash_logo_head_office2.jpg" />
+
+		<wallpaper
+            author="JaiThemes"
+            url="http://aokp.co/wallpapers/jaithemes_striped_blue.jpg" />
+
+        <wallpaper
+            author="JaiThemes"
+            url="http://aokp.co/wallpapers/jaithemes_striped.jpg" />
+
+		<wallpaper
+            author="Just_Reboot"
+            url="http://aokp.co/wallpapers/just_reboot_wall_10.png" />
+
+		<wallpaper
+            author="KnokFirst"
+            url="http://aokp.co/wallpapers/knokfirst_phlashlogo_crazy.jpg" />
+
+		<wallpaper
+            author="Just_Reboot"
+            url="http://aokp.co/wallpapers/knokfirst_phlashlogo.jpg" />
+		</category>
+
+		<category name="AOKP Wallpapers" >
+
+		<wallpaper
+            author="UNKNOWN"
+            url="http://pac-rom.com/wallpapers/pa1.png" />
+
+		<wallpaper
+            author="UNKNOWN"
+            url="http://pac-rom.com/wallpapers/pa2.png" />
+
+		<wallpaper
+            author="UNKNOWN"
+            url="http://pac-rom.com/wallpapers/pa3.png" />
+
+		<wallpaper
+            author="UNKNOWN"
+            url="http://pac-rom.com/wallpapers/pa4.png" />
+
+		<wallpaper
+            author="UNKNOWN"
+            url="http://pac-rom.com/wallpapers/pa5.png" />
+
+		<wallpaper
+            author="UNKNOWN"
+            url="http://pac-rom.com/wallpapers/pa6.png" />
+		</category>
 
 </wallpapers>
