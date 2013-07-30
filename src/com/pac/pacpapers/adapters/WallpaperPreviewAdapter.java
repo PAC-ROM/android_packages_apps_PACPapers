@@ -2,13 +2,22 @@ package com.pac.pacpapers.adapters;
 
 import java.util.ArrayList;
 
+import com.koushikdutta.urlimageviewhelper.UrlImageViewCallback;
+import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
+import com.pac.pacpapers.R;
 import com.pac.pacpapers.types.Wallpaper;
 import com.pac.pacpapers.types.WallpaperCategory;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.OvershootInterpolator;
+import android.view.animation.ScaleAnimation;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class WallpaperPreviewAdapter extends ArrayAdapter<WallpaperCategory> {
 	public final int SHOW_ALL_CATS = -1;
@@ -18,12 +27,11 @@ public class WallpaperPreviewAdapter extends ArrayAdapter<WallpaperCategory> {
 
 	private int mCat = -1;
 	
-	public WallpaperPreviewAdapter(Context context, int resource,
+	public WallpaperPreviewAdapter(Context context, int resource,  
 			ArrayList<WallpaperCategory> objects) {
-		super(context, resource, objects);
+		super(context, resource,  objects);
 		// TODO init this 
 		mList = objects;
-		
 		init_arrays();
 	}
 
@@ -45,6 +53,7 @@ public class WallpaperPreviewAdapter extends ArrayAdapter<WallpaperCategory> {
 		//TODO refresh the list CLEAR ALL and start over (image cache should stop any crapyness)
 		
 	}
+	
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO draw a veiw that looks epic sauces... 
@@ -52,8 +61,30 @@ public class WallpaperPreviewAdapter extends ArrayAdapter<WallpaperCategory> {
 		// TODO recylce the old views
 		
 		// TODO Fix Tylers broken stuffs
+		Log.d("lsitcrap"," " + mWallList.size());
 		
-		return super.getView(position, convertView, parent);
+
+        View v = View.inflate(getContext(), R.layout.thumbnail, null);
+        
+        TextView name = (TextView) v.findViewById(R.id.name);
+        TextView author = (TextView) v.findViewById(R.id.author);
+        ImageView thumbnail = (ImageView) v.findViewById(R.id.thumb);
+        
+        name.setText("BOOBIES");
+        author.setText("OF DOOM");
+        
+        //thumbnail.setAnimation(null);
+        // yep, that's it. it handles the downloading and showing an interstitial image automagically.
+        UrlImageViewHelper.setUrlDrawable(thumbnail, mWallList.get(position).getThumbUrl(), R.drawable.ic_launcher, new UrlImageViewCallback() {
+            @Override
+            public void onLoaded(ImageView imageView, Drawable loadedBitmap, String url, boolean loadedFromCache) {
+        		Log.d("lsitcrap","loaded " + url);
+        		
+            }
+
+        });       
+        Log.d("lsitcrap"," " + v.getWidth() + " " + v.getHeight());
+        return v;
 	}
 	
 	

@@ -4,16 +4,20 @@ import java.util.ArrayList;
 
 import com.pac.pacpapers.R;
 import com.pac.pacpapers.WallpaperActivity;
+import com.pac.pacpapers.adapters.WallpaperPreviewAdapter;
+import com.pac.pacpapers.types.Wallpaper;
 import com.pac.pacpapers.types.WallpaperCategory;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.TextView;
 
@@ -26,8 +30,12 @@ public class WallpaperPreviewFragment extends Fragment {
     TextView pageNum;
 
     ArrayList<WallpaperCategory> mArray;
+    ArrayAdapter<WallpaperCategory> mAdapter; 
     public int selectedCategory = 0; 
 
+    public void setArray(ArrayList<WallpaperCategory> list){
+    	this.mArray = list;
+    }
     public void setCategory(int cat) {
         selectedCategory = cat;
         
@@ -37,15 +45,21 @@ public class WallpaperPreviewFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
+    	
         mView = inflater.inflate(R.layout.activity_wallpaper, container, false);
         pageNum = (TextView) mView.findViewById(R.id.textView1);
         pageNum.setText("total :");
         
         mGrid = (GridView) mView.findViewById(R.id.GridView1);
+        
         // TODO attach the adapter with the lasy ass loader
-        
+        mAdapter = new WallpaperPreviewAdapter(this.getActivity(), R.layout.thumbnail,  mArray );
+        mGrid.setAdapter(mAdapter);
         // TODO update the view to show the list
-        
+        mAdapter.notifyDataSetChanged();
+        Log.d("lsitcrap"," " + mGrid.getHeight());
+        Log.d("lsitcrap"," " + mGrid.getWidth());
+
         return mView;
     }
     

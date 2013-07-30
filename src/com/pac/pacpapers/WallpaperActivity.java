@@ -73,6 +73,7 @@ public class WallpaperActivity extends Activity {
 
     protected void loadPreviewFragment() {
         mPreviewFragment = new WallpaperPreviewFragment();
+        mPreviewFragment.setArray(categories);
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction ft = fragmentManager.beginTransaction();
         ft.add(android.R.id.content, mPreviewFragment);
