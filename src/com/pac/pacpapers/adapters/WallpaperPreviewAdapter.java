@@ -8,6 +8,7 @@ import com.pac.pacpapers.R;
 import com.pac.pacpapers.types.Wallpaper;
 
 import android.content.Context;
+import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.View;
@@ -60,14 +61,22 @@ public class WallpaperPreviewAdapter extends ArrayAdapter<Wallpaper> {
         
         //thumbnail.setAnimation(null);
         // yep, that's it. it handles the downloading and showing an interstitial image automagically.
-        UrlImageViewHelper.setUrlDrawable(thumbnail, mWallList.get(position).getThumbUrl(), R.drawable.ic_launcher, new UrlImageViewCallback() {
+        UrlImageViewHelper.setUrlDrawable(thumbnail, mWallList.get(position).getThumbUrl(), R.drawable.ghost_icon, new UrlImageViewCallback() {
             @Override
             public void onLoaded(ImageView imageView, Drawable loadedBitmap, String url, boolean loadedFromCache) {
         		Log.d("lsitcrap","loaded " + url);
-        		
+                //author.setText(mWallList.get(position).getAuthor());
             }
-
-        });       
+        });     
+        try {
+        AnimationDrawable anim = (AnimationDrawable) thumbnail.getDrawable();
+    	if (anim != null){
+    		anim.stop();
+    		anim.start();
+    	}
+        } catch (ClassCastException e ){
+        	Log.d("failzor", "failing");
+        }
         
         Log.d("lsitcrap"," " + v.getWidth() + " " + v.getHeight());
         return v;

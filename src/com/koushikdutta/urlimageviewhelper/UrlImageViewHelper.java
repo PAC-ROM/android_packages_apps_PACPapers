@@ -23,6 +23,7 @@ import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.http.AndroidHttpClient;
@@ -174,16 +175,22 @@ public final class UrlImageViewHelper {
             e.printStackTrace();
         }
     }
-
     private static void setUrlDrawable(final Context context, final ImageView imageView, final String url, final Drawable defaultDrawable, long cacheDurationMs, final UrlImageViewCallback callback) {
         cleanup(context);
         // disassociate this ImageView from any pending downloads
+        AnimationDrawable anim;
+
         if (imageView != null)
             mPendingViews.remove(imageView);
 
         if (isNullOrEmpty(url)) {
             if (imageView != null)
                 imageView.setImageDrawable(defaultDrawable);
+            	anim = (AnimationDrawable) imageView.getDrawable();
+            	if (anim != null){
+            		anim.stop();
+            		anim.start();
+            	}
             return;
         }
 
@@ -224,8 +231,14 @@ public final class UrlImageViewHelper {
         }
 
         // null it while it is downloading
-        if (imageView != null)
+        if (imageView != null){
             imageView.setImageDrawable(defaultDrawable);
+        	anim = (AnimationDrawable) imageView.getDrawable();
+        	if (anim != null){
+        		anim.stop();
+        		anim.start();
+        	}
+        }
 
         // since listviews reuse their views, we need to 
         // take note of which url this view is waiting for.
@@ -287,8 +300,10 @@ public final class UrlImageViewHelper {
 
             protected void onPostExecute(BitmapDrawable result) {
                 Drawable usableResult = result;
-                if (usableResult == null)
+                if (usableResult == null){
                     usableResult = defaultDrawable;
+
+                }
                 mPendingDownloads.remove(url);
                 cache.put(url, usableResult);
                 for (ImageView iv: downloads) {
@@ -303,6 +318,17 @@ public final class UrlImageViewHelper {
                         final Drawable newImage = usableResult;
                         final ImageView imageView = iv;
                         imageView.setImageDrawable(newImage);
+                        AnimationDrawable anim = null;
+                        try {
+	                        anim = (AnimationDrawable) imageView.getDrawable();
+                        } catch (ClassCastException e){
+                        	// do nothing
+                        }
+                    	if (anim != null){
+                    		//anim.stop();
+                    		//anim.start();
+                    	}
+
                         if (callback != null)
                             callback.onLoaded(imageView, result, url, false);
                     }

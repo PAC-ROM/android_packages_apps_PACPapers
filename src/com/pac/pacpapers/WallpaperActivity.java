@@ -45,8 +45,6 @@ public class WallpaperActivity extends Activity {
 
     public final String TAG = "PacPapers";
     protected static final String MANIFEST = "wallpaper_manifest.xml";
-    protected static final int THUMBS_TO_SHOW = 4;
-
     /*
      * pull the manifest from the web server specified in config.xml or pull
      * wallpaper_manifest.xml from local assets/ folder for testing
@@ -69,6 +67,7 @@ public class WallpaperActivity extends Activity {
 
         mLoadingDialog.show();
         new LoadWallpaperManifest().execute();
+        
     }
 
     protected void loadPreviewFragment() {
@@ -92,6 +91,9 @@ public class WallpaperActivity extends Activity {
                     }
                 });
         ab.setDisplayShowTitleEnabled(false);
+        ab.setSelectedNavigationItem(1);
+
+        setCategory(1);
     }
 
     protected void setCategory(int cat) {

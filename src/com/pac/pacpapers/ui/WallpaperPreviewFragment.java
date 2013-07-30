@@ -9,6 +9,7 @@ import com.pac.pacpapers.types.Wallpaper;
 import com.pac.pacpapers.types.WallpaperCategory;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,6 +18,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.TextView;
@@ -33,11 +36,11 @@ public class WallpaperPreviewFragment extends Fragment {
 
     ArrayList<WallpaperCategory> mArray;
     ArrayAdapter<Wallpaper> mAdapter; 
-    public int selectedCategory = 0; 
+    public int selectedCategory = 1; 
 
     public void setArray(ArrayList<WallpaperCategory> list){
     	this.mArray = list;
-    	setCategory(WallpaperPreviewAdapter.SHOW_ALL_CATS);
+    	setCategory(1);
     }
     
     public void setCategory(int cat) {
@@ -62,7 +65,7 @@ public class WallpaperPreviewFragment extends Fragment {
 	        // TODO update the view to show the list
 	        mAdapter.notifyDataSetChanged();
 	        pageNum.setText(mWallList.size() + " Wallpapers Available");
-
+	        
     	}
 
         //update this bad boy!
@@ -83,7 +86,20 @@ public class WallpaperPreviewFragment extends Fragment {
         mGrid.setAdapter(mAdapter);
         // TODO update the view to show the list
         mAdapter.notifyDataSetChanged();
+        mGrid.setOnItemClickListener(new OnItemClickListener(){
 
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+	            Intent preview = new Intent(WallpaperPreviewFragment.this.getActivity(), Preview.class);
+	            preview.putExtra("wp", mWallList.get(arg2).getUrl());
+	            startActivity(preview);
+
+			}
+        	
+        });
+        setCategory(1);
         return mView;
     }
     
