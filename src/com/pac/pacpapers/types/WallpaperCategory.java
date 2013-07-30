@@ -1,5 +1,5 @@
 
-package com.pac.pacpapers;
+package com.pac.pacpapers.types;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Preview"
+            android:name="com.pac.pacpapers.ui.Preview"
             android:configChanges="orientation|screenSize" />
         <activity android:name=".Vote" />
     </application>

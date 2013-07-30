@@ -1,5 +1,9 @@
 
-package com.pac.pacpapers;
+package com.pac.pacpapers.ui;
+
+import com.pac.pacpapers.R;
+import com.pac.pacpapers.R.id;
+import com.pac.pacpapers.R.layout;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -27,7 +31,7 @@ public class ThumbnailView extends RelativeLayout {
     }
 
     void init() {
-        setVisibility(View.INVISIBLE);
+        //setVisibility(View.INVISIBLE);
         View v = View.inflate(getContext(), R.layout.thumbnail, null);
         addView(v);
         name = (TextView) findViewById(R.id.name);

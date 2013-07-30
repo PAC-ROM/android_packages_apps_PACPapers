@@ -38,69 +38,14 @@
         android:layout_marginBottom="5dp"
         android:text="@string/page" />
 
-    <LinearLayout
-        android:id="@+id/LinearLayout1"
+    <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/textView1"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="5dp"
-        android:orientation="vertical" >
+        android:layout_marginBottom="5dp">
+    </GridLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
-
-            <com.pac.pacpapers.ThumbnailView
-                android:id="@+id/imageView1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1" />
-
-            <com.pac.pacpapers.ThumbnailView
-                android:id="@+id/imageView2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
-
-            <com.pac.pacpapers.ThumbnailView
-                android:id="@+id/imageView3"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1" />
-
-            <com.pac.pacpapers.ThumbnailView
-                android:id="@+id/imageView4"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1" />
-        </LinearLayout>
-    </LinearLayout>
 
 </RelativeLayout>

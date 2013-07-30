@@ -1,11 +1,14 @@
 
-package com.pac.pacpapers;
+package com.pac.pacpapers.parsers;
 
 import android.content.Context;
 import android.util.Log;
 
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
+
+import com.pac.pacpapers.types.Wallpaper;
+import com.pac.pacpapers.types.WallpaperCategory;
 
 import java.io.File;
 import java.io.IOException;

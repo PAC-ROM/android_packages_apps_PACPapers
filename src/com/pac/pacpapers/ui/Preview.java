@@ -1,5 +1,5 @@
 
-package com.pac.pacpapers;
+package com.pac.pacpapers.ui;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -29,6 +29,12 @@ import android.widget.Toast;
 
 import com.koushikdutta.urlimageviewhelper.UrlImageViewCallback;
 import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
+import com.pac.pacpapers.R;
+import com.pac.pacpapers.WallpaperActivity;
+import com.pac.pacpapers.R.id;
+import com.pac.pacpapers.R.layout;
+import com.pac.pacpapers.R.menu;
+import com.pac.pacpapers.R.string;
 
 import java.io.BufferedInputStream;
 import java.io.File;
