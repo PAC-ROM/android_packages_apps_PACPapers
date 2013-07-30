@@ -124,7 +124,7 @@ public class Preview extends Activity {
         // FEATURE_NO_TITLE crashes because setContentView() has already been
         // called
         // I'll look into fixes later
-        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+       /* if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             // this.requestWindowFeature(Window.FEATURE_NO_TITLE);
             setContentView(R.layout.activity_preview_land);
             this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -138,7 +138,7 @@ public class Preview extends Activity {
             restart.putExtra("wp", link);
             startActivity(restart);
             finish();
-        }
+        }*/
     }
 
     @Override
