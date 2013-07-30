@@ -4,9 +4,6 @@ import java.util.ArrayList;
 
 import com.pac.pacpapers.R;
 import com.pac.pacpapers.WallpaperActivity;
-import com.pac.pacpapers.R.id;
-import com.pac.pacpapers.R.layout;
-import com.pac.pacpapers.types.Wallpaper;
 import com.pac.pacpapers.types.WallpaperCategory;
 
 import android.app.Fragment;
@@ -17,22 +14,19 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.TextView;
 
 public class WallpaperPreviewFragment extends Fragment {
 
     static final String TAG = "PreviewFragment";
-    WallpaperActivity mActivity;
+    
     View mView;
-
+    GridView mGrid;
     TextView pageNum;
-    public int selectedCategory = 0; 
 
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mActivity = (WallpaperActivity) getActivity();
-    }
+    ArrayList<WallpaperCategory> mArray;
+    public int selectedCategory = 0; 
 
     public void setCategory(int cat) {
         selectedCategory = cat;
@@ -45,6 +39,13 @@ public class WallpaperPreviewFragment extends Fragment {
             Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.activity_wallpaper, container, false);
         pageNum = (TextView) mView.findViewById(R.id.textView1);
+        pageNum.setText("total :");
+        
+        mGrid = (GridView) mView.findViewById(R.id.GridView1);
+        // TODO attach the adapter with the lasy ass loader
+        
+        // TODO update the view to show the list
+        
         return mView;
     }
     
