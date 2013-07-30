@@ -30,6 +30,8 @@ import com.pac.pacpapers.adapters.NavigationBarCategoryAdapater;
 import com.pac.pacpapers.parsers.ManifestXmlParser;
 import com.pac.pacpapers.types.Wallpaper;
 import com.pac.pacpapers.types.WallpaperCategory;
+import com.pac.pacpapers.ui.WallpaperPreviewFragment;
+import com.pac.pacpapers.util.*;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -92,111 +94,10 @@ public class WallpaperActivity extends Activity {
     }
 
     protected void setCategory(int cat) {
-        mPreviewFragment.setCategory(cat);
+    	mPreviewFragment.setCategory(cat);
     }
 
-    public static class WallpaperPreviewFragment extends Fragment {
 
-        static final String TAG = "PreviewFragment";
-        WallpaperActivity mActivity;
-        View mView;
-
-        public int currentPage = -1;
-        TextView pageNum;
-        public int selectedCategory = 0; // *should* be <ALL> wallpapers
-
-        @Override
-        public void onActivityCreated(Bundle savedInstanceState) {
-            super.onActivityCreated(savedInstanceState);
-            mActivity = (WallpaperActivity) getActivity();
-        }
-
-        public void setCategory(int cat) {
-            selectedCategory = cat;
-            currentPage = -1;
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            mView = inflater.inflate(R.layout.activity_wallpaper, container, false);
-            pageNum = (TextView) mView.findViewById(R.id.textView1);
-            return mView;
-        }
-
-        public ArrayList<WallpaperCategory> getCategories() {
-            return mActivity.mCategoryAdapter.getCategories();
-        }
-
-        protected Wallpaper getWallpaper(int realIndex) {
-            return getCategories().get(selectedCategory).getWallpapers().get(realIndex);
-        }
-
-        @Override
-        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-            super.onCreateOptionsMenu(menu, inflater);
-        }
-
-        public boolean onOptionsItemSelected(MenuItem item) {
-            switch (item.getItemId()) {
-                default:
-                    return super.onOptionsItemSelected(item);
-            }
-        }
-
-        /*class ThumbnailClickListener implements View.OnClickListener {
-            Wallpaper wall;
-
-            public ThumbnailClickListener(Wallpaper wallpaper) {
-                this.wall = wallpaper;
-            }
-
-            @Override
-            public void onClick(View v) {
-                Intent preview = new Intent(mActivity, Preview.class);
-                preview.putExtra("wp", wall.getUrl());
-                startActivity(preview);
-            }
-        }*/
-    }
-
-    public static String getDlDir(Context c) {
-        String configFolder = getResourceString(c, R.string.config_wallpaper_download_loc);
-        if (configFolder != null && !configFolder.isEmpty()) {
-            return new File(Environment.getExternalStorageDirectory(), configFolder)
-                    .getAbsolutePath() + "/";
-        } else {
-            return Environment.getExternalStorageDirectory().getAbsolutePath();
-        }
-    }
-
-    public static String getSvDir(Context c) {
-        String configFolder = getResourceString(c, R.string.config_wallpaper_sdcard_dl_location);
-        if (configFolder != null && !configFolder.isEmpty()) {
-            return new File(Environment.getExternalStorageDirectory(), configFolder)
-                    .getAbsolutePath() + "/";
-        } else {
-            return null;
-        }
-    }
-
-    protected String getWallpaperDestinationPath() {
-        String configFolder = getResourceString(R.string.config_wallpaper_sdcard_dl_location);
-        if (configFolder != null && !configFolder.isEmpty()) {
-            return new File(Environment.getExternalStorageDirectory(), configFolder)
-                    .getAbsolutePath();
-        }
-        // couldn't find resource?
-        return null;
-    }
-
-    protected String getResourceString(int stringId) {
-        return getApplicationContext().getResources().getString(stringId);
-    }
-
-    public static String getResourceString(Context c, int id) {
-        return c.getResources().getString(id);
-    }
 
     private class LoadWallpaperManifest extends
             AsyncTask<Void, Boolean, ArrayList<WallpaperCategory>> {
@@ -210,7 +111,7 @@ public class WallpaperActivity extends Activity {
                 if (USE_LOCAL_MANIFEST) {
                     input = getApplicationContext().getAssets().open(MANIFEST);
                 } else {
-                    URL url = new URL(getResourceString(R.string.config_wallpaper_manifest_url));
+                    URL url = new URL(helpers.getResourceString(WallpaperActivity.this.getApplicationContext(), R.string.config_wallpaper_manifest_url));
                     URLConnection connection = url.openConnection();
                     connection.connect();
                     int fileLength = connection.getContentLength();

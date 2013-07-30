@@ -35,6 +35,7 @@ import com.pac.pacpapers.R.id;
 import com.pac.pacpapers.R.layout;
 import com.pac.pacpapers.R.menu;
 import com.pac.pacpapers.R.string;
+import com.pac.pacpapers.util.helpers;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -96,7 +97,7 @@ public class Preview extends Activity {
             finish();
         }
 
-        File f = new File(WallpaperActivity.getSvDir(getApplicationContext()));
+        File f = new File(helpers.getSvDir(getApplicationContext()));
         Log.i(TAG, "Check for external SD: " + f.getAbsolutePath());
         if (f.isDirectory() && f.exists()) {
         } else {
@@ -287,11 +288,11 @@ public class Preview extends Activity {
     }
 
     String getDlDir() {
-        return WallpaperActivity.getDlDir(getApplicationContext());
+        return helpers.getDlDir(getApplicationContext());
     }
 
     String getSvDir() {
-        return WallpaperActivity.getSvDir(getApplicationContext());
+        return helpers.getSvDir(getApplicationContext());
     }
 
     public static Bitmap drawableToBitmap(Drawable drawable) {
