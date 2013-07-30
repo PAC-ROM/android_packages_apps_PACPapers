@@ -29,16 +29,42 @@ public class WallpaperPreviewFragment extends Fragment {
     GridView mGrid;
     TextView pageNum;
 
+	ArrayList<Wallpaper> mWallList;
+
     ArrayList<WallpaperCategory> mArray;
-    ArrayAdapter<WallpaperCategory> mAdapter; 
+    ArrayAdapter<Wallpaper> mAdapter; 
     public int selectedCategory = 0; 
 
     public void setArray(ArrayList<WallpaperCategory> list){
     	this.mArray = list;
+    	setCategory(WallpaperPreviewAdapter.SHOW_ALL_CATS);
     }
+    
     public void setCategory(int cat) {
         selectedCategory = cat;
-        
+    	mWallList = new ArrayList<Wallpaper>();
+    	if (selectedCategory == WallpaperPreviewAdapter.SHOW_ALL_CATS){
+    		for (int i = 0; i < mArray.size() ; i++){
+    			ArrayList<Wallpaper> mTemp = (ArrayList<Wallpaper>) mArray.get(i).getWallpapers();
+    			for (int j = 0; j<mTemp.size();j++){
+    				// TODO Loop it up and ADD ALL THE WALLPAPERS
+    				mWallList.add(mTemp.get(j));
+    			}
+    		}
+    	} else {
+    		// Only add the current cat
+    		mWallList = (ArrayList<Wallpaper>) mArray.get(selectedCategory).getWallpapers();
+    	}
+    	if ( mAdapter != null && mGrid != null && mAdapter != null){
+	        mAdapter = new WallpaperPreviewAdapter(this.getActivity(), R.layout.thumbnail,  mWallList );
+	        mGrid.setAdapter(mAdapter);
+	        
+	        // TODO update the view to show the list
+	        mAdapter.notifyDataSetChanged();
+	        pageNum.setText(mWallList.size() + " Wallpapers Available");
+
+    	}
+
         //update this bad boy!
     }
 
@@ -53,12 +79,10 @@ public class WallpaperPreviewFragment extends Fragment {
         mGrid = (GridView) mView.findViewById(R.id.GridView1);
         
         // TODO attach the adapter with the lasy ass loader
-        mAdapter = new WallpaperPreviewAdapter(this.getActivity(), R.layout.thumbnail,  mArray );
+        mAdapter = new WallpaperPreviewAdapter(this.getActivity(), R.layout.thumbnail,  mWallList );
         mGrid.setAdapter(mAdapter);
         // TODO update the view to show the list
         mAdapter.notifyDataSetChanged();
-        Log.d("lsitcrap"," " + mGrid.getHeight());
-        Log.d("lsitcrap"," " + mGrid.getWidth());
 
         return mView;
     }
