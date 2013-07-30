@@ -42,7 +42,7 @@ public class WallpaperPreviewAdapter extends ArrayAdapter<WallpaperCategory> {
 			mWallList = (ArrayList<Wallpaper>) mList.get(mCat).getWallpapers();
 		}
 		
-		//TODO refresh the list CLEAR ALL and start over (cache will stop crapyness)
+		//TODO refresh the list CLEAR ALL and start over (image cache should stop any crapyness)
 		
 	}
 	@Override
