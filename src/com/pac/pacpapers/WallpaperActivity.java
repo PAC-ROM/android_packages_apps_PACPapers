@@ -26,6 +26,12 @@ import android.widget.TextView;
 
 import com.koushikdutta.urlimageviewhelper.UrlImageViewCallback;
 import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
+import com.pac.pacpapers.adapters.NavigationBarCategoryAdapater;
+import com.pac.pacpapers.parsers.ManifestXmlParser;
+import com.pac.pacpapers.types.Wallpaper;
+import com.pac.pacpapers.types.WallpaperCategory;
+import com.pac.pacpapers.ui.WallpaperPreviewFragment;
+import com.pac.pacpapers.util.*;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -39,8 +45,6 @@ public class WallpaperActivity extends Activity {
 
     public final String TAG = "PacPapers";
     protected static final String MANIFEST = "wallpaper_manifest.xml";
-    protected static final int THUMBS_TO_SHOW = 4;
-
     /*
      * pull the manifest from the web server specified in config.xml or pull
      * wallpaper_manifest.xml from local assets/ folder for testing
@@ -63,10 +67,12 @@ public class WallpaperActivity extends Activity {
 
         mLoadingDialog.show();
         new LoadWallpaperManifest().execute();
+        
     }
 
     protected void loadPreviewFragment() {
         mPreviewFragment = new WallpaperPreviewFragment();
+        mPreviewFragment.setArray(categories);
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction ft = fragmentManager.beginTransaction();
         ft.add(android.R.id.content, mPreviewFragment);
@@ -85,261 +91,16 @@ public class WallpaperActivity extends Activity {
                     }
                 });
         ab.setDisplayShowTitleEnabled(false);
+        ab.setSelectedNavigationItem(1);
+
+        setCategory(1);
     }
 
     protected void setCategory(int cat) {
-        mPreviewFragment.setCategory(cat);
+    	mPreviewFragment.setCategory(cat);
     }
 
-    public static class WallpaperPreviewFragment extends Fragment {
 
-        static final String TAG = "PreviewFragment";
-        WallpaperActivity mActivity;
-        View mView;
-
-        public int currentPage = -1;
-        Button back;
-        Button next;
-        TextView pageNum;
-        ThumbnailView[] thumbs;
-        public int selectedCategory = 0; // *should* be <ALL> wallpapers
-
-        @Override
-        public void onActivityCreated(Bundle savedInstanceState) {
-            super.onActivityCreated(savedInstanceState);
-            mActivity = (WallpaperActivity) getActivity();
-            next(); // load initial page
-        }
-
-        public void setCategory(int cat) {
-            selectedCategory = cat;
-            currentPage = -1;
-            next();
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-
-            mView = inflater.inflate(R.layout.activity_wallpaper, container, false);
-
-            back = (Button) mView.findViewById(R.id.backButton);
-            next = (Button) mView.findViewById(R.id.nextButton);
-            pageNum = (TextView) mView.findViewById(R.id.textView1);
-
-            thumbs = new ThumbnailView[THUMBS_TO_SHOW];
-            thumbs[0] = (ThumbnailView) mView.findViewById(R.id.imageView1);
-            thumbs[1] = (ThumbnailView) mView.findViewById(R.id.imageView2);
-            thumbs[2] = (ThumbnailView) mView.findViewById(R.id.imageView3);
-            thumbs[3] = (ThumbnailView) mView.findViewById(R.id.imageView4);
-
-            next.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    next();
-                }
-            });
-
-            back.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    previous();
-                }
-            });
-
-            return mView;
-        }
-
-        public ArrayList<WallpaperCategory> getCategories() {
-            return mActivity.mCategoryAdapter.getCategories();
-        }
-
-        protected Wallpaper getWallpaper(int realIndex) {
-            return getCategories().get(selectedCategory).getWallpapers().get(realIndex);
-        }
-
-        protected void setThumbs() {
-            for (ThumbnailView v : thumbs)
-                v.setVisibility(View.INVISIBLE);
-
-            final int numWallpapersInCategory = getCategories().get(selectedCategory)
-                    .getWallpapers().size();
-            boolean enableForward = true;
-
-            for (int i = 0; i < thumbs.length; i++) {
-                final int realIndex = (currentPage * thumbs.length + i);
-                if (realIndex >= (numWallpapersInCategory - 1)) {
-                    enableForward = false;
-                    break;
-                }
-
-                Wallpaper w = getWallpaper(realIndex);
-                thumbs[i].setOnClickListener(null);
-                thumbs[i].getName().setText(w.getName());
-                thumbs[i].getAuthor().setText(w.getAuthor());
-                UrlImageViewHelper.setUrlDrawable(thumbs[i].getThumbnail(), w.getThumbUrl(),
-                        R.drawable.ic_placeholder, new ThumbnailCallBack(w, realIndex));
-            }
-
-            back.setEnabled(currentPage != 0);
-            next.setEnabled(enableForward);
-        }
-
-        public void next() {
-            getNextButton().setEnabled(false);
-            pageNum.setText(getResources().getString(R.string.page) + " " + (++currentPage + 1));
-
-            setThumbs();
-        }
-
-        public void previous() {
-            pageNum.setText(getResources().getString(R.string.page) + " " + (--currentPage + 1));
-
-            setThumbs();
-        }
-
-        protected void skipToPage(int page) {
-            if (page < currentPage) {
-                while (page < currentPage) {
-                    previous(); // should subtract page
-                }
-            } else if (page > currentPage) {
-                while (page > currentPage) {
-                    next();
-                }
-            }
-        }
-
-        public void jumpTo() {
-            // View view = getLayoutInflater().inflate(R.layout.dialog_jumpto,
-            // null);
-            // final EditText e = (EditText) view.findViewById(R.id.pageNumber);
-            // AlertDialog.Builder j = new AlertDialog.Builder(this);
-            // j.setTitle(R.string.jump2);
-            // j.setView(view);
-            // j.setPositiveButton(android.R.string.ok, new
-            // DialogInterface.OnClickListener() {
-            //
-            // public void onClick(DialogInterface dialog, int which) {
-            // skipToPage(Integer.parseInt(e.getText().toString()));
-            // }
-            // });
-            // j.setNegativeButton(android.R.string.no, new
-            // DialogInterface.OnClickListener() {
-            //
-            // public void onClick(DialogInterface dialog, int which) {
-            // dialog.cancel();
-            // }
-            // });
-            // j.create().show();
-        }
-
-        protected View getThumbView(int i) {
-            if (thumbs != null && thumbs.length > 0)
-                return thumbs[i];
-            else
-                return null;
-        }
-
-        protected Button getNextButton() {
-            return next;
-        }
-
-        protected Button getPreviousButton() {
-            return back;
-        }
-
-        @Override
-        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-            super.onCreateOptionsMenu(menu, inflater);
-        }
-
-        public boolean onOptionsItemSelected(MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.jump:
-                    jumpTo();
-                    return true;
-                default:
-                    return super.onOptionsItemSelected(item);
-            }
-        }
-
-        class ThumbnailCallBack implements UrlImageViewCallback {
-
-            Wallpaper wall;
-            int index;
-
-            public ThumbnailCallBack(Wallpaper wall, int index) {
-                this.wall = wall;
-                this.index = index;
-            }
-
-            @Override
-            public void onLoaded(ImageView imageView, Drawable loadedDrawable, String url,
-                    boolean loadedFromCache) {
-
-                final int relativeIndex = index % 4;
-                if (loadedDrawable != null) {
-                    getThumbView(relativeIndex).setOnClickListener(
-                            new ThumbnailClickListener(wall));
-                    getThumbView(relativeIndex).setVisibility(View.VISIBLE);
-                }
-                if (loadedDrawable != null && relativeIndex == 3)
-                    getNextButton().setEnabled(true);
-            }
-        }
-
-        class ThumbnailClickListener implements View.OnClickListener {
-            Wallpaper wall;
-
-            public ThumbnailClickListener(Wallpaper wallpaper) {
-                this.wall = wallpaper;
-            }
-
-            @Override
-            public void onClick(View v) {
-                Intent preview = new Intent(mActivity, Preview.class);
-                preview.putExtra("wp", wall.getUrl());
-                startActivity(preview);
-            }
-        }
-    }
-
-    public static String getDlDir(Context c) {
-        String configFolder = getResourceString(c, R.string.config_wallpaper_download_loc);
-        if (configFolder != null && !configFolder.isEmpty()) {
-            return new File(Environment.getExternalStorageDirectory(), configFolder)
-                    .getAbsolutePath() + "/";
-        } else {
-            return Environment.getExternalStorageDirectory().getAbsolutePath();
-        }
-    }
-
-    public static String getSvDir(Context c) {
-        String configFolder = getResourceString(c, R.string.config_wallpaper_sdcard_dl_location);
-        if (configFolder != null && !configFolder.isEmpty()) {
-            return new File(Environment.getExternalStorageDirectory(), configFolder)
-                    .getAbsolutePath() + "/";
-        } else {
-            return null;
-        }
-    }
-
-    protected String getWallpaperDestinationPath() {
-        String configFolder = getResourceString(R.string.config_wallpaper_sdcard_dl_location);
-        if (configFolder != null && !configFolder.isEmpty()) {
-            return new File(Environment.getExternalStorageDirectory(), configFolder)
-                    .getAbsolutePath();
-        }
-        // couldn't find resource?
-        return null;
-    }
-
-    protected String getResourceString(int stringId) {
-        return getApplicationContext().getResources().getString(stringId);
-    }
-
-    public static String getResourceString(Context c, int id) {
-        return c.getResources().getString(id);
-    }
 
     private class LoadWallpaperManifest extends
             AsyncTask<Void, Boolean, ArrayList<WallpaperCategory>> {
@@ -353,27 +114,20 @@ public class WallpaperActivity extends Activity {
                 if (USE_LOCAL_MANIFEST) {
                     input = getApplicationContext().getAssets().open(MANIFEST);
                 } else {
-                    URL url = new URL(getResourceString(R.string.config_wallpaper_manifest_url));
+                    URL url = new URL(helpers.getResourceString(WallpaperActivity.this.getApplicationContext(), R.string.config_wallpaper_manifest_url));
                     URLConnection connection = url.openConnection();
                     connection.connect();
-                    // this will be useful so that you can show a typical
-                    // 0-100%
-                    // progress bar
                     int fileLength = connection.getContentLength();
-
-                    // download the file
                     input = new BufferedInputStream(url.openStream());
                 }
+                
                 OutputStream output = getApplicationContext().openFileOutput(
                         MANIFEST, MODE_PRIVATE);
-
                 byte data[] = new byte[1024];
                 long total = 0;
                 int count;
                 while ((count = input.read(data)) != -1) {
                     total += count;
-                    // publishing the progress....
-                    // publishProgress((int) (total * 100 / fileLength));
                     output.write(data, 0, count);
                 }
 

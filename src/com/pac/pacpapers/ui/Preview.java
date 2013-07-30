@@ -1,5 +1,5 @@
 
-package com.pac.pacpapers;
+package com.pac.pacpapers.ui;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -29,6 +29,13 @@ import android.widget.Toast;
 
 import com.koushikdutta.urlimageviewhelper.UrlImageViewCallback;
 import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
+import com.pac.pacpapers.R;
+import com.pac.pacpapers.WallpaperActivity;
+import com.pac.pacpapers.R.id;
+import com.pac.pacpapers.R.layout;
+import com.pac.pacpapers.R.menu;
+import com.pac.pacpapers.R.string;
+import com.pac.pacpapers.util.helpers;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -90,7 +97,7 @@ public class Preview extends Activity {
             finish();
         }
 
-        File f = new File(WallpaperActivity.getSvDir(getApplicationContext()));
+        File f = new File(helpers.getSvDir(getApplicationContext()));
         Log.i(TAG, "Check for external SD: " + f.getAbsolutePath());
         if (f.isDirectory() && f.exists()) {
         } else {
@@ -117,7 +124,7 @@ public class Preview extends Activity {
         // FEATURE_NO_TITLE crashes because setContentView() has already been
         // called
         // I'll look into fixes later
-        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+       /* if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             // this.requestWindowFeature(Window.FEATURE_NO_TITLE);
             setContentView(R.layout.activity_preview_land);
             this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -131,7 +138,7 @@ public class Preview extends Activity {
             restart.putExtra("wp", link);
             startActivity(restart);
             finish();
-        }
+        }*/
     }
 
     @Override
@@ -281,11 +288,11 @@ public class Preview extends Activity {
     }
 
     String getDlDir() {
-        return WallpaperActivity.getDlDir(getApplicationContext());
+        return helpers.getDlDir(getApplicationContext());
     }
 
     String getSvDir() {
-        return WallpaperActivity.getSvDir(getApplicationContext());
+        return helpers.getSvDir(getApplicationContext());
     }
 
     public static Bitmap drawableToBitmap(Drawable drawable) {

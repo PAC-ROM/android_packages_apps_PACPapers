@@ -1,5 +1,5 @@
 
-package com.pac.pacpapers;
+package com.pac.pacpapers.types;
 
 public class Wallpaper {
 

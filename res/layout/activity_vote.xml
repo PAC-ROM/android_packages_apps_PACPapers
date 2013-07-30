@@ -20,8 +20,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
-        android:src="@drawable/ic_placeholder" />
-
+        android:src="@drawable/ic_placeholder"/>
 <ImageView
     android:id="@+id/wallpaperTwo"
     android:layout_width="wrap_content"

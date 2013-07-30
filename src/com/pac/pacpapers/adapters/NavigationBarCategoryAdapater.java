@@ -1,5 +1,5 @@
 
-package com.pac.pacpapers;
+package com.pac.pacpapers.adapters;
 
 import android.content.Context;
 import android.database.DataSetObserver;
@@ -10,6 +10,12 @@ import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import com.pac.pacpapers.R;
+import com.pac.pacpapers.R.id;
+import com.pac.pacpapers.R.layout;
+import com.pac.pacpapers.types.Wallpaper;
+import com.pac.pacpapers.types.WallpaperCategory;
 
 public class NavigationBarCategoryAdapater implements SpinnerAdapter {
 
