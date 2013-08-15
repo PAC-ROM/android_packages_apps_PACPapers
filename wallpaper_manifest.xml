@@ -169,4 +169,27 @@
             url="http://pac-rom.com/wallpapers/paranoid/pa6.png" />
     </category>
 
+    <category name="Misc" />
+
+	<wallpaper
+	    author="UNKNOWN" 
+	    url="http://pac-rom.com/wallpapers/misc/Bay-Lights.jpg" />
+
+	<wallpaper
+	    author="UNKNOWN"
+	    url="http://pac-rom.com/wallpapers/misc/Equalizer-music.jpg" />
+
+	<wallpaper
+            author="Chris Hadfield"
+	    url="http://pac-rom.com/wallpapers/misc/iss03.jpg" />
+
+	<wallpaper
+	    author="UNKNOWN"
+	    url="http://pac-rom.com/wallpapers/misc/the-River-New-Zealand.jpg" />
+
+	<wallpaper
+	    author="UNKNOWN"
+	    url="http://pac-rom.com/wallpapers/misc/water-light.jpg" />
+    </category>
+
 </wallpapers>
