@@ -55,6 +55,7 @@ public class Preview extends Activity {
     String link = "";
     ProgressDialog mProgressDialog;
     public static final int DIALOG_DOWNLOAD_PROGRESS = 0;
+    public static final int DIALOG_DOWNLOAD_IMAGE = 1;
 
     String fileDest = null;
     String fileName = null;
@@ -170,14 +171,22 @@ public class Preview extends Activity {
     @Override
     protected Dialog onCreateDialog(int id) {
         switch (id) {
-            case DIALOG_DOWNLOAD_PROGRESS:
-                mProgressDialog = new ProgressDialog(this);
-                mProgressDialog.setMessage(getResources().getString(R.string.setting_wallpaper));
-                mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-                mProgressDialog.setIndeterminate(true);
-                mProgressDialog.setCancelable(true);
-                mProgressDialog.show();
-                return mProgressDialog;
+                case DIALOG_DOWNLOAD_PROGRESS:
+                    mProgressDialog = new ProgressDialog(this);
+                    mProgressDialog.setMessage(getResources().getString(R.string.setting_wallpaper));
+                    mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                    mProgressDialog.setIndeterminate(true);
+                    mProgressDialog.setCancelable(true);
+                    mProgressDialog.show();
+                    return mProgressDialog;
+                case DIALOG_DOWNLOAD_IMAGE:
+                    mProgressDialog = new ProgressDialog(this);
+                    mProgressDialog.setMessage(getResources().getString(R.string.saving_wallpaper));
+                    mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                    mProgressDialog.setIndeterminate(true);
+                    mProgressDialog.setCancelable(true);
+                    mProgressDialog.show();
+                    return mProgressDialog;
             default:
                 return null;
         }
@@ -227,7 +236,7 @@ public class Preview extends Activity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            showDialog(DIALOG_DOWNLOAD_PROGRESS);
+            showDialog(DIALOG_DOWNLOAD_IMAGE);
         }
 
         @Override
@@ -280,7 +289,7 @@ public class Preview extends Activity {
         @SuppressWarnings("deprecation")
         @Override
         protected void onPostExecute(String unused) {
-            dismissDialog(DIALOG_DOWNLOAD_PROGRESS);
+            dismissDialog(DIALOG_DOWNLOAD_IMAGE);
             Toast.makeText(getApplicationContext(),
                     getResources().getString(R.string.saved) + " " + getSvDir() + fileName,
                     Toast.LENGTH_LONG).show();
