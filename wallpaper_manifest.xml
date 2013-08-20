@@ -83,9 +83,146 @@
         <wallpaper
             author="UNKNOWN"
             url="http://pac-rom.com/wallpapers/pacman/pacman18.jpg" />
-		<wallpaper
+
+	<wallpaper
             author="One2thTEXAN/Chris Allen"
             url="http://pac-rom.com/wallpapers/pacman/PAC_glass.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/CM_combo.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_1a.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_1b.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_1c.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_1d.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_1e.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_1f.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_brushed_carbon.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_carbon.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_earth_2.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_earth_3.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_earth_4.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_ghost.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_glass_1.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_moon.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/pac_pa_cm_aokp_sq.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/pac_pa_cm_aokp_sq_2.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/pac_pa_cm_aokp_sq_3.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/pac_pa_cm_aokp_sq_4.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_roms.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_soft.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_soft_2.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_striped.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_striped_2.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_team.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_team_2.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_team_3.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_team_4.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_texture.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_texture_2.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_texture_3.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_texture_4.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/PAC_texture_5.png" />
+
+	<wallpaper
+            author="One2thTEXAN/Chris Allen"
+            url="http://pac-rom.com/wallpapers/pacman/plain_logo.png" />
     </category>
 
     <category name="CM Wallpapers" >
@@ -172,7 +309,7 @@
     <category name="Misc">
 
 	<wallpaper
-	    author="UNKNOWN" 
+	    author="UNKNOWN"
 	    url="http://pac-rom.com/wallpapers/misc/Bay-Lights.jpg" />
 
 	<wallpaper
