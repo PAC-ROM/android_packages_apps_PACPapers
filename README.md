@@ -1,7 +1,11 @@
 Wallpaper Manifest XML Format
 =============================
 
-All XML tags (like id, name, etc) are optional
+Only URL and Author, if there is one, are needed. Other tags are not bad, but are optional.
+Those tags:
+1. thumbUrl
+2. date
+3. name
 
 Adding Categories
 -----------------
