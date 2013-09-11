@@ -7,7 +7,7 @@ Those tags:
 2. date
 3. name
 
-Adding Categories
+Adding Categories: Please look over the categories that already exist to make sure you are not adding a duplicate wallpaper
 -----------------
 * `id="<string>"` unique id string 
 * `name="<string>"` visual name 
